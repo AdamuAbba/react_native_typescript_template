@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+
+  "tasks": [
+    {
+      "label": "New react component",
+
+      "command": "cd src/components && mkdir ${input:dirName} && touch '${input:dirName}/${input:dirName}.tsx' '${input:dirName}/${input:dirName}.styles.ts' '${input:dirName}/${input:dirName}.test.tsx' '${input:dirName}/index.ts' '${input:dirName}/types.ts' && echo -e 'export {default} from './${input:dirName}'' >> ${input:dirName}/index.ts ",
+
+      "type": "shell",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      }
+    }
+  ],
+
+  // ........................................................................................
+
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "dirName",
+      "description": "component name",
+      "default": "component folder to create"
+    }
+  ]
+}
