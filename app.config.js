@@ -36,10 +36,11 @@ export default () => ({
         backgroundColor: '#09163C',
       },
       softwareKeyboardLayoutMode: 'pan',
-      package: '',
+      package: 'com.reactNative.template',
     },
-    description: '',
-    githubUrl: '',
+    description: 'My custom react native typescript template',
+    githubUrl:
+      'https://github.com/AdamuAbba/react_native_typescript_template.git',
     extra: {
       ...Config,
     },

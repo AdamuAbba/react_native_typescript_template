@@ -3,7 +3,7 @@
   "name": "react-native-typescript-template",
   "version": "1.0.0",
   "scripts": {
-    "start": "npx expo start",
+    "start": "APP_ENV=development npx expo start",
     "start:clear": "npx expo start --clear",
     "start:client": "npx expo start --dev-client",
     "start:client:clear": "npx expo start --dev-client --clear",
@@ -26,6 +26,7 @@
     "eas:submit:android": "eas submit --platform android --latest"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "~1.17.3",
     "@react-native-masked-view/masked-view": "0.2.7",
     "@react-navigation/bottom-tabs": "^6.4.0",
     "@react-navigation/material-bottom-tabs": "^6.2.4",
@@ -62,7 +63,8 @@
     "react-navigation": "^4.4.4",
     "react-navigation-stack": "^2.10.4",
     "react-redux": "^7.2.4",
-    "redux": "^4.1.1"
+    "redux": "^4.1.1",
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -73,6 +75,7 @@
     "@testing-library/react-native": "^11.2.0",
     "@tsconfig/react-native": "^2.0.2",
     "@types/jest": "^29.1.2",
+    "@types/node": "^18.11.4",
     "@types/react-native": "~0.69.1",
     "@types/react-test-renderer": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.37.0",

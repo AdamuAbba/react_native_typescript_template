@@ -1,12 +1,13 @@
+import 'react-native-gesture-handler';
 import {theme} from 'configs/themeConfig';
+import store, {persistor} from 'features/store';
+import React, {useEffect, useState} from 'react';
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import store from 'features/store';
-import React, {useEffect, useState} from 'react';
 import FlashMessage from 'react-native-flash-message';
-import 'react-native-gesture-handler';
 import {Provider as PaperProvider} from 'react-native-paper';
 import {Provider as StoreProvider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
 import RootStack from 'routes/RootStack';
 
 const App = (): JSX.Element | null => {
@@ -39,7 +40,9 @@ const App = (): JSX.Element | null => {
     return (
       <StoreProvider store={store}>
         <PaperProvider theme={theme}>
-          <RootStack />
+          <PersistGate loading={null} persistor={persistor}>
+            <RootStack />
+          </PersistGate>
         </PaperProvider>
         <FlashMessage position="top" />
       </StoreProvider>

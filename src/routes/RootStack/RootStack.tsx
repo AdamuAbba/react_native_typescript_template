@@ -4,6 +4,7 @@ import {
   createStackNavigator,
 } from '@react-navigation/stack';
 import React from 'react';
+import SomeOtherScreen from 'screens/SomeOtherScreen';
 import WelcomeScreen from 'screens/WelcomeScreen';
 import {IRootStackParamsList} from './types';
 
@@ -17,8 +18,22 @@ const RootStack = () => {
       <Navigator
         screenOptions={{
           cardStyleInterpolator: CardStyleInterpolators.forBottomSheetAndroid,
-        }}>
-        <Screen name="welcome-screen" component={WelcomeScreen} />
+        }}
+        initialRouteName="welcome-screen">
+        <Screen
+          name="welcome-screen"
+          component={WelcomeScreen}
+          options={{
+            title: 'Welcome',
+          }}
+        />
+        <Screen
+          name="some-other-screen"
+          component={SomeOtherScreen}
+          options={{
+            title: 'Other Screen',
+          }}
+        />
       </Navigator>
     </NavigationContainer>
   );

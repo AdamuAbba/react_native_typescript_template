@@ -6,15 +6,19 @@ const untranspiledModulePatterns = [
 
 const config: Config.InitialOptions = {
   preset: 'jest-expo',
+  setupFiles: [
+    './tests/jest/setup.ts',
+    './node_modules/react-native-gesture-handler/jestSetup.js',
+  ],
   setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
   testEnvironment: 'jest-environment-jsdom',
   globals: {
     'ts-jest': {
-      tsconfig: {
-        jsx: 'react',
-      },
+      tsconfig: './tsconfig.json',
     },
   },
+  testTimeout: 5000,
+  verbose: false,
   testMatch: ['**/?(*.)+(spec|test).ts?(x)'],
   collectCoverageFrom: [
     '**/*.{ts,tsx}',

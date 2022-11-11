@@ -1,3 +1,4 @@
+import renderWithWrappers from 'helpers/testHelpers/renderWithWrappers';
 declare global {
   namespace ReactNativePaper {
     interface ThemeColors {
@@ -19,3 +20,12 @@ declare module '*.svg' {
   const content: React.FC<SvgProps>;
   export default content;
 }
+
+// declare module NodeJS {
+//   interface Global {
+//     renderWithWrappers: typeof renderWithWrappers;
+//   }
+// }
+
+// declare var global: any;
+// global.renderWithWrappers = renderWithWrappers;

@@ -5,7 +5,7 @@
     {
       "label": "New react component",
 
-      "command": "cd src/components && mkdir ${input:dirName} && touch '${input:dirName}/${input:dirName}.tsx' '${input:dirName}/${input:dirName}.styles.ts' '${input:dirName}/${input:dirName}.test.tsx' '${input:dirName}/index.ts' '${input:dirName}/types.ts' && echo -e 'export {default} from './${input:dirName}'' >> ${input:dirName}/index.ts ",
+      "command": "cd ${input:selectedDir} && mkdir ${input:compName} && touch '${input:compName}/${input:compName}.tsx' '${input:compName}/${input:compName}.styles.ts' '${input:compName}/${input:compName}.test.tsx' '${input:compName}/index.ts' '${input:compName}/types.ts' && echo -e 'export {default} from './${input:compName}'' >> ${input:compName}/index.ts ",
 
       "type": "shell",
       "problemMatcher": [],
@@ -25,9 +25,18 @@
   "inputs": [
     {
       "type": "promptString",
-      "id": "dirName",
+      "id": "compName",
       "description": "component name",
-      "default": "component folder to create"
+      "default": "component name"
+    },
+    {
+      "id": "selectedDir",
+      "type": "pickString",
+      "description": "What directory to add component to?",
+      "options": [
+        {"label": "components", "value": "src/components"},
+        {"label": "screens", "value": "src/screens"}
+      ]
     }
   ]
 }

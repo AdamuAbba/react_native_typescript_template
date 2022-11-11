@@ -37,6 +37,11 @@
       "middleware/*": ["src/middleware/*"]
     }
   },
-
+  // "include": [
+  //   "src/**/*.d.ts",
+  //   "src/**/**/*.test.ts",
+  //   "src/**/*.test.ts",
+  //   "jest/setup.ts"
+  // ],
   "exclude": ["node_modules", "babel.config.js", "metro.config.js"]
 }
